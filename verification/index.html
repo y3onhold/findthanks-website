@@ -240,15 +240,11 @@
 
             if (state === 'loading') {
                 loadingState.classList.remove('hidden');
-                loadingState.style.display = 'block';
             } else if (state === 'success') {
-                loadingState.classList.add('hidden');
                 successState.classList.remove('hidden');
             } else if (state === 'error') {
-                loadingState.classList.add('hidden');
                 errorState.classList.remove('hidden');
             } else if (state === 'already-verified') {
-                loadingState.classList.add('hidden');
                 alreadyVerifiedState.classList.remove('hidden');
             }
         }
