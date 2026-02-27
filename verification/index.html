@@ -197,7 +197,7 @@
             <div id="errorDetails" class="error-details hidden">
                 <p id="errorDetailText"></p>
             </div>
-            <a href="#" id="resendButton" class="button">Resend Verification Email</a>
+            <a id="resendButton" class="button">Resend Verification Email</a>
             <a href="#" id="contactButton" class="button button-secondary">Contact Support</a>
         </div>
 
@@ -214,7 +214,7 @@
     <script>
         // Configuration - Replace with your actual API URL
         const API_URL = 'https://basined-unhomologous-vesta.ngrok-free.dev'; // Change to your backend URL
-        const APP_SCHEME = 'myApp://'; // Your app's deep link scheme
+        const APP_SCHEME = 'findthanks://'; // Your app's deep link scheme
 
         // Get DOM elements
         const loadingState = document.getElementById('loadingState');
@@ -302,7 +302,7 @@
             
             if (isMobile) {
                 // Try to open the app
-                window.location.href = `${APP_SCHEME}home`;
+                window.location.href = `${APP_SCHEME}login`;
                 
                 // Fallback: if app doesn't open within 2 seconds, show app store links
                 setTimeout(() => {

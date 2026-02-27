@@ -249,7 +249,7 @@
             <div class="icon success-icon">✓</div>
             <h1>Password Reset Successful!</h1>
             <p>Your password has been successfully reset. You can now log in with your new password.</p>
-            <button class="button" onclick="window.location.href='index.html'">
+            <button id="openAppButton" class="button">
                 Go to Login
             </button>
         </div>
@@ -259,10 +259,7 @@
             <div class="icon error-icon">✕</div>
             <h1>Reset Link Invalid</h1>
             <p id="errorMessage">This password reset link is invalid or has expired.</p>
-            <button class="button" onclick="window.location.href='forgot-password.html'">
-                Request New Link
-            </button>
-            <button class="button button-secondary" onclick="window.location.href='index.html'">
+            <button id="openAppButton" class="button button-secondary">
                 Back to Login
             </button>
         </div>
@@ -270,6 +267,7 @@
 
     <script>
         const API_URL = 'https://basined-unhomologous-vesta.ngrok-free.dev';
+        const APP_SCHEME = 'findthanks://'; // Your app's deep link scheme
 
         const loadingState = document.getElementById('loadingState');
         const resetForm = document.getElementById('resetForm');
@@ -416,6 +414,26 @@
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Reset Password';
             }
+        });
+
+        function tryOpenApp() {
+            // Check if running on mobile
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // Try to open the app
+                window.location.href = `${APP_SCHEME}login`;
+                
+                // Fallback: if app doesn't open within 2 seconds, show app store links
+                setTimeout(() => {
+                    // Could redirect to app store or show download button
+                }, 2000);
+            }
+        }
+
+        document.getElementById('openAppButton').addEventListener('click', (e) => {
+            e.preventDefault();
+            tryOpenApp();
         });
 
         // Initialize
