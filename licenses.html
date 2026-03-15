@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindThanks — Daily Gratitude, Rediscovered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <a href="/index.html#home" class="nav-logo">FindThanks</a>
+        <ul class="nav-links">
+            <li><a href="/index.html#home">Home</a></li>
+        </ul>
+    </nav>
+    <div style="background: white;">
+        <section id="licenses" class="licenses-section">
+            <div class="section-header">
+                <p class="section-eyebrow">Open Source</p>
+                <h2>Third-Party Licenses</h2>
+                <p>FindThanks is built on the shoulders of these open-source libraries. We gratefully acknowledge their
+                    authors and communities.</p>
+            </div>
+
+            <div class="license-summary">
+                <div class="summary-stat">
+                    <span class="summary-num">34</span>
+                    <span class="summary-label">Libraries</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-stat">
+                    <span class="summary-num">33</span>
+                    <span class="summary-label">MIT Licensed</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-stat">
+                    <span class="summary-num">1</span>
+                    <span class="summary-label">Apache-2.0</span>
+                </div>
+            </div>
+
+            <div class="license-filters">
+                <button class="filter-btn active" onclick="filterLicenses('all', this)">All <span
+                        class="filter-count">34</span></button>
+                <button class="filter-btn" onclick="filterLicenses('MIT', this)">MIT <span
+                        class="filter-count">33</span></button>
+                <button class="filter-btn" onclick="filterLicenses('Apache-2.0', this)">Apache-2.0 <span
+                        class="filter-count">1</span></button>
+            </div>
+
+            <div class="license-search-wrap">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input type="text" id="licenseSearch" class="license-search" placeholder="Search libraries..."
+                    oninput="searchLicenses(this.value)" />
+            </div>
+
+            <div class="license-list" id="licenseList">
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">@babel/runtime<span class="lib-version">v7.28.6</span></h3>
+                            <p class="lib-desc">Babel runtime helpers used at runtime for transpiled code.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/babel/babel" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View @babel/runtime on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">@expo/metro-config<span class="lib-version">v54.0.14</span></h3>
+                            <p class="lib-desc">Metro bundler configuration for Expo projects.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View @expo/metro-config on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">@expo/vector-icons<span class="lib-version">v15.1.1</span></h3>
+                            <p class="lib-desc">A set of icon fonts for use with Expo and React Native.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/vector-icons" target="_blank" rel="noopener"
+                                class="lib-link" aria-label="View @expo/vector-icons on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">@react-native-async-storage/async-storage<span
+                                    class="lib-version">v2.2.0</span></h3>
+                            <p class="lib-desc">Asynchronous, persistent, key-value storage system for React Native.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/react-native-async-storage/async-storage" target="_blank"
+                                rel="noopener" class="lib-link"
+                                aria-label="View @react-native-async-storage/async-storage on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">@react-native-community/datetimepicker<span
+                                    class="lib-version">v8.6.0</span></h3>
+                            <p class="lib-desc">React Native date and time picker component for iOS and Android.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/react-native-datetimepicker/datetimepicker" target="_blank"
+                                rel="noopener" class="lib-link"
+                                aria-label="View @react-native-community/datetimepicker on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">@react-native-community/netinfo<span class="lib-version">v11.5.2</span>
+                            </h3>
+                            <p class="lib-desc">Network state information API for React Native.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/react-native-netinfo/react-native-netinfo" target="_blank"
+                                rel="noopener" class="lib-link"
+                                aria-label="View @react-native-community/netinfo on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">@react-navigation/bottom-tabs<span class="lib-version">v7.15.2</span>
+                            </h3>
+                            <p class="lib-desc">Bottom tab navigator for React Navigation.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/react-navigation/react-navigation" target="_blank"
+                                rel="noopener" class="lib-link"
+                                aria-label="View @react-navigation/bottom-tabs on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">@react-navigation/native<span class="lib-version">v7.1.31</span></h3>
+                            <p class="lib-desc">Core utilities and hooks for React Navigation.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/react-navigation/react-navigation" target="_blank"
+                                rel="noopener" class="lib-link" aria-label="View @react-navigation/native on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">@react-navigation/stack<span class="lib-version">v7.8.2</span></h3>
+                            <p class="lib-desc">Stack navigator for React Navigation with gesture and animation support.
+                            </p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/react-navigation/react-navigation" target="_blank"
+                                rel="noopener" class="lib-link" aria-label="View @react-navigation/stack on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">@types/react<span class="lib-version">v19.1.17</span></h3>
+                            <p class="lib-desc">TypeScript type definitions for React.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank" rel="noopener"
+                                class="lib-link" aria-label="View @types/react on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">expo-apple-authentication<span class="lib-version">v8.0.8</span></h3>
+                            <p class="lib-desc">Sign in with Apple support for Expo apps.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View expo-apple-authentication on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">expo-auth-session<span class="lib-version">v7.0.10</span></h3>
+                            <p class="lib-desc">OAuth 2.0 and OpenID Connect authentication for Expo.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View expo-auth-session on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">expo-crypto<span class="lib-version">v15.0.8</span></h3>
+                            <p class="lib-desc">Cryptographic functions for Expo, including hashing and random values.
+                            </p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View expo-crypto on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">expo-dev-client<span class="lib-version">v6.0.20</span></h3>
+                            <p class="lib-desc">Development client for Expo with custom native code support.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View expo-dev-client on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">expo-device<span class="lib-version">v8.0.10</span></h3>
+                            <p class="lib-desc">Device information and capabilities API for Expo.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View expo-device on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">expo-notifications<span class="lib-version">v0.32.16</span></h3>
+                            <p class="lib-desc">Local and push notification support for Expo applications.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View expo-notifications on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">expo-secure-store<span class="lib-version">v15.0.8</span></h3>
+                            <p class="lib-desc">Secure key-value storage backed by Keychain (iOS) and Keystore
+                                (Android).</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View expo-secure-store on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">expo-status-bar<span class="lib-version">v3.0.9</span></h3>
+                            <p class="lib-desc">Status bar component and utilities for Expo apps.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View expo-status-bar on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">expo-web-browser<span class="lib-version">v15.0.10</span></h3>
+                            <p class="lib-desc">In-app browser and OAuth redirect support for Expo.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View expo-web-browser on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">expo<span class="lib-version">v54.0.33</span></h3>
+                            <p class="lib-desc">The Expo SDK — an open-source platform for universal React applications.
+                            </p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/expo/expo" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View expo on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">i18n-js<span class="lib-version">v4.5.3</span></h3>
+                            <p class="lib-desc">Internationalization and localization library for JavaScript
+                                applications.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/fnando/i18n-js" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View i18n-js on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">jwt-decode<span class="lib-version">v4.0.0</span></h3>
+                            <p class="lib-desc">Decodes JSON Web Tokens without verifying the signature.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/auth0/jwt-decode" target="_blank" rel="noopener"
+                                class="lib-link" aria-label="View jwt-decode on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react-native-gesture-handler<span class="lib-version">v2.28.0</span>
+                            </h3>
+                            <p class="lib-desc">Declarative gesture handling API for React Native.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/software-mansion/react-native-gesture-handler" target="_blank"
+                                rel="noopener" class="lib-link"
+                                aria-label="View react-native-gesture-handler on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react-native-keychain<span class="lib-version">v10.0.0</span></h3>
+                            <p class="lib-desc">Secure keychain/keystore access for React Native apps.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/oblador/react-native-keychain" target="_blank" rel="noopener"
+                                class="lib-link" aria-label="View react-native-keychain on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react-native-localize<span class="lib-version">v3.7.0</span></h3>
+                            <p class="lib-desc">Device locale and timezone utilities for React Native.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/zoontek/react-native-localize" target="_blank" rel="noopener"
+                                class="lib-link" aria-label="View react-native-localize on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react-native-paper<span class="lib-version">v5.15.0</span></h3>
+                            <p class="lib-desc">Material Design components for React Native following MD3 specification.
+                            </p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/callstack/react-native-paper" target="_blank" rel="noopener"
+                                class="lib-link" aria-label="View react-native-paper on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react-native-reanimated<span class="lib-version">v4.1.6</span></h3>
+                            <p class="lib-desc">React Native animation library using the native thread for smooth 60fps
+                                animations.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/software-mansion/react-native-reanimated" target="_blank"
+                                rel="noopener" class="lib-link" aria-label="View react-native-reanimated on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react-native-safe-area-context<span class="lib-version">v5.6.2</span>
+                            </h3>
+                            <p class="lib-desc">Safe area insets API for React Native supporting notched and rounded
+                                devices.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/th3rdwave/react-native-safe-area-context" target="_blank"
+                                rel="noopener" class="lib-link"
+                                aria-label="View react-native-safe-area-context on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react-native-screens<span class="lib-version">v4.16.0</span></h3>
+                            <p class="lib-desc">Native navigation screen components for React Navigation.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/software-mansion/react-native-screens" target="_blank"
+                                rel="noopener" class="lib-link" aria-label="View react-native-screens on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react-native-svg-transformer<span class="lib-version">v1.5.3</span>
+                            </h3>
+                            <p class="lib-desc">Import SVG files in React Native projects via Metro bundler.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/kristerkari/react-native-svg-transformer" target="_blank"
+                                rel="noopener" class="lib-link"
+                                aria-label="View react-native-svg-transformer on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react-native-svg<span class="lib-version">v15.15.3</span></h3>
+                            <p class="lib-desc">SVG support for React Native applications on iOS and Android.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/software-mansion/react-native-svg" target="_blank"
+                                rel="noopener" class="lib-link" aria-label="View react-native-svg on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react-native<span class="lib-version">v0.81.5</span></h3>
+                            <p class="lib-desc">Framework for building native mobile applications using React and
+                                JavaScript.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/facebook/react-native" target="_blank" rel="noopener"
+                                class="lib-link" aria-label="View react-native on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="MIT">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">react<span class="lib-version">v19.1.0</span></h3>
+                            <p class="lib-desc">A JavaScript library for building user interfaces.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge">MIT</span>
+                            <a href="https://github.com/facebook/react" target="_blank" rel="noopener" class="lib-link"
+                                aria-label="View react on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-entry" data-license="Apache-2.0">
+                    <div class="license-entry-header">
+                        <div>
+                            <h3 class="lib-name">typescript<span class="lib-version">v5.9.3</span></h3>
+                            <p class="lib-desc">A strongly typed programming language that builds on JavaScript.</p>
+                        </div>
+                        <div class="license-meta">
+                            <span class="license-badge apache">Apache-2.0</span>
+                            <a href="https://github.com/microsoft/TypeScript" target="_blank" rel="noopener"
+                                class="lib-link" aria-label="View typescript on GitHub">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <details class="license-text-block">
+                <summary>MIT License — Full Text</summary>
+                <div class="license-text">
+                    <p>Copyright (c) respective authors and contributors listed above.</p><br>
+                    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+                        associated documentation files (the "Software"), to deal in the Software without restriction,
+                        including without limitation the rights to use, copy, modify, merge, publish, distribute,
+                        sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+                        furnished to do so, subject to the following conditions:</p><br>
+                    <p>The above copyright notice and this permission notice shall be included in all copies or
+                        substantial portions of the Software.</p><br>
+                    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+                        NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+                        NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+                        DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+                </div>
+            </details>
+
+            <details class="license-text-block">
+                <summary>Apache License 2.0 — Full Text (TypeScript / Microsoft)</summary>
+                <div class="license-text">
+                    <p>Copyright (c) Microsoft Corporation. All rights reserved.</p><br>
+                    <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+                        in compliance with the License. You may obtain a copy of the License at:</p><br>
+                    <p><a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener"
+                            style="color:var(--brown);">https://www.apache.org/licenses/LICENSE-2.0</a></p><br>
+                    <p>Unless required by applicable law or agreed to in writing, software distributed under the License
+                        is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+                        or implied. See the License for the specific language governing permissions and limitations
+                        under the License.</p>
+                </div>
+            </details>
+
+            <p class="license-footer-note">
+                This list reflects direct dependencies as of the current app version. Transitive dependencies may
+                include additional open-source packages with their own license terms. Full license texts for each
+                library are available in the respective GitHub repositories linked above. For questions, contact <a
+                    href="mailto:yeonho@findthanks.dev">yeonho@findthanks.dev</a>.
+            </p>
+
+            <script>
+                function filterLicenses(type, btn) {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.getElementById('licenseSearch').value = '';
+                    document.querySelectorAll('#licenseList .license-entry').forEach(el => {
+                        el.style.display = (type === 'all' || el.dataset.license === type) ? '' : 'none';
+                    });
+                }
+                function searchLicenses(q) {
+                    const query = q.toLowerCase();
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelector('.filter-btn').classList.add('active');
+                    document.querySelectorAll('#licenseList .license-entry').forEach(el => {
+                        el.style.display = el.textContent.toLowerCase().includes(query) ? '' : 'none';
+                    });
+                }
+            </script>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-logo">FindThanks</div>
+        <p style="margin-bottom: 0.5rem;">
+            <a href="/index.html#privacy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+            <a href="/index.html#contact">Contact</a>
+        </p>
+        <p>&copy; 2025 FindThanks LLC. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
