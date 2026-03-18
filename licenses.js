@@ -84,6 +84,13 @@ const LIBRARIES = [
         license: "MIT",
         url: "https://github.com/expo/expo"
     },
+        {
+        name: "expo-checkbox",
+        version: "v55.0.3",
+        desc: "Checkbox functions for Expo.",
+        license: "MIT",
+        url: "https://github.com/expo/expo/tree/main/packages/expo-checkbox"
+    },
     {
         name: "expo-crypto",
         version: "v15.0.8",
